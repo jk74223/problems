@@ -1,92 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"">
-    <title>固定宽度页面与腾讯文档链接</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客户问题工单系统</title>
     <style>
-        /* 设置网页的全局样式 */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            scroll-behavior: smooth; /* 平滑滚动效果 */
+            font-family: 'Microsoft YaHei', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 360px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        .ticket-buttons {
             display: flex;
             flex-direction: column;
-            align-items: center; /* 水平居中 */
-            justify-content: center; /* 垂直居中 */
-            background-color: #f9f9f9; /* 背景颜色 */
+            gap: 15px;
         }
-
-        /* 设置页面内容的最大宽度为360像素，并居中显示 */
-        .container {
-            max-width: 360px;
-            width: 100%;
-            padding: 20px;
-            background-color: #fff; /* 内容背景颜色 */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-            border-radius: 8px; /* 圆角效果 */
+        .ticket-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        /* 网页内跳转的导航栏 */
-        nav {
-            margin-bottom: 20px;
+        .ticket-description {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
             text-align: center;
         }
-
-        nav a {
-            margin: 0 10px;
-            color: #333;
+        .ticket-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3498db;
+            color: white;
             text-decoration: none;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* 每个部分的样式 */
-        section {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
             border-radius: 5px;
-        }
-
-        /* 腾讯文档链接样式 */
-        .link {
-            display: block;
-            width: 90%; /* 宽度占满容器 */
-            padding: 10px;
+            padding: 8px 15px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+            width: 120px;
             text-align: center;
-            background-color: #1E90FF; /* 背景颜色 */
-            color: #FFFFFF; /* 文字颜色 */
-            text-decoration: none; /* 去掉下划线 */
-            border-radius: 5px; /* 圆角效果 */
         }
-
-        .link:hover {
-            background-color: #187bcd; /* 鼠标悬停时的背景颜色 */
+        .ticket-button:hover {
+            background-color: #2980b9;
+            transform: translateX(3px);
+        }
+        .ticket-button i {
+            margin-right: 5px;
+            font-size: 14px;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- 页面内容容器 -->
     <div class="container">
-        <!-- 网页内跳转的导航栏 -->
-        <nav>
-            <a href="#home">首页</a> |
-            <a href="#about">关于我们</a> |
-            <a href="#contact">联系我们</a>
-        </nav>
-
-        
-        <!-- 腾讯文档链接 -->
-        <div>
-        <span>你发现了新的续费登记</span>
-        <a href="https://doc.weixin.qq.com/smartsheet/form/1_wp9CcYCwAABwGyxUC9cmWgVTrvxGMfgw_a3620f" target="_blank" class="link">
-            点击填写续费登记
-        </a>
+        <h1>售后工单系统</h1>
+        <div class="ticket-buttons">
+            <div class="ticket-item">
+                <span class="ticket-description">为即将续费的客户登记信息</span>
+                <a href="https://doc.weixin.qq.com/smartsheet/form/1_wp9CcYCwAABwGyxUC9cmWgVTrvxGMfgw_a3620f" target="_blank" class="ticket-button">
+                    <i class="fas fa-sync-alt"></i> 续费登记
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">登记存在风险的客户信息</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-exclamation-triangle"></i> 风险客户登记
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">记录400电话的来电情况</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-phone-volume"></i> 400来电登记
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">记录客户的培训情况</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-graduation-cap"></i> 培训记录
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">记录客户的良好评价</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-star"></i> 好评记录
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">引导客户导入竞品资料</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-file-alt"></i> 导竞品资料
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">登记小程序的相关信息</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-mobile-alt"></i> 小程序登记
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">变更客户的主账号信息</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-user-edit"></i> 主账号变更登记
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">收集客户对软件的使用反馈</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-comment"></i> 软件使用反馈
+                </a>
+            </div>
+            <div class="ticket-item">
+                <span class="ticket-description">提交每周的工作报告</span>
+                <a href="#" class="ticket-button" target="_blank">
+                    <i class="fas fa-chart-line"></i> 周报
+                </a>
+            </div>
         </div>
     </div>
 </body>
